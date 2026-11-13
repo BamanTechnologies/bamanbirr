@@ -3,18 +3,23 @@ import { AccountButton } from "@/components/auth/AccountButton";
 
 export function LogoMark({ className = "h-8 w-8" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 32 32" className={className} aria-hidden="true">
+    // Same mark as src/app/icon.svg (the favicon): a "b" whose bowl is a coin with a check in it.
+    <svg viewBox="0 0 64 64" className={className} aria-hidden="true">
       <defs>
-        <linearGradient id="bb-g" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#8ecbfb" />
-          <stop offset="1" stopColor="#1f78d6" />
+        <linearGradient id="bb-bg" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stopColor="#58aff7" />
+          <stop offset="1" stopColor="#1a61ad" />
         </linearGradient>
+        <radialGradient id="bb-shine" cx="0.22" cy="0.12" r="0.75">
+          <stop offset="0" stopColor="#fff" stopOpacity=".35" />
+          <stop offset="1" stopColor="#fff" stopOpacity="0" />
+        </radialGradient>
       </defs>
-      <rect width="32" height="32" rx="9" fill="url(#bb-g)" />
-      {/* a "b" whose bowl is a coin */}
-      <path d="M11 7.5v17" stroke="#fff" strokeWidth="2.6" strokeLinecap="round" />
-      <circle cx="17.2" cy="18.6" r="5.9" fill="none" stroke="#fff" strokeWidth="2.6" />
-      <path d="M17.2 16.2v4.8" stroke="#fff" strokeWidth="1.6" strokeLinecap="round" opacity=".85" />
+      <rect width="64" height="64" rx="15" fill="url(#bb-bg)" />
+      <rect width="64" height="64" rx="15" fill="url(#bb-shine)" />
+      <path d="M19 12.5v38" stroke="#fff" strokeWidth="6.5" strokeLinecap="round" />
+      <circle cx="33.5" cy="38.5" r="12" fill="none" stroke="#fff" strokeWidth="6.5" />
+      <path d="M28.1 38.8l3.9 3.9 7-7.6" fill="none" stroke="#fff" strokeWidth="4.2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
@@ -41,14 +46,14 @@ export function SiteHeader({ cta = true }: { cta?: boolean }) {
           <Link href="/#privacy" className="hover:text-ink">Privacy</Link>
           <Link href="/#faq" className="hover:text-ink">FAQ</Link>
         </nav>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3 sm:gap-4">
           <AccountButton />
           {cta && (
             <Link
               href="/analyze"
-              className="rounded-full bg-brand-600 px-4 py-2 text-sm font-medium text-white shadow-sm shadow-brand-600/20 transition hover:bg-brand-700"
+              className="whitespace-nowrap rounded-full bg-brand-600 px-4 py-2 text-sm font-medium text-white shadow-sm shadow-brand-600/20 transition hover:bg-brand-700"
             >
-              Analyze my messages
+              <span className="sm:hidden">Analyze</span><span className="hidden sm:inline">Analyze my messages</span>
             </Link>
           )}
         </div>
@@ -65,11 +70,11 @@ export function SiteFooter() {
           <Logo />
           <p className="text-sm text-ink-2">Every birr, accounted for. A product of Baman Technologies.</p>
         </div>
-        <div className="grid grid-cols-2 gap-x-12 gap-y-2 text-sm text-ink-2">
-          <Link href="/analyze" className="hover:text-ink">Analyze</Link>
-          <Link href="/#privacy" className="hover:text-ink">Privacy</Link>
-          <Link href="/#how" className="hover:text-ink">How it works</Link>
-          <Link href="/#faq" className="hover:text-ink">FAQ</Link>
+        <div className="grid grid-cols-2 gap-x-12 text-sm text-ink-2">
+          <Link href="/analyze" className="py-2 hover:text-ink">Analyze</Link>
+          <Link href="/#privacy" className="py-2 hover:text-ink">Privacy</Link>
+          <Link href="/#how" className="py-2 hover:text-ink">How it works</Link>
+          <Link href="/#faq" className="py-2 hover:text-ink">FAQ</Link>
         </div>
       </div>
       <div className="border-t border-line">

@@ -72,7 +72,7 @@ function ProductPreview() {
   ];
   return (
     <div className="relative animate-fade-up [animation-delay:120ms]">
-      <div className="rounded-3xl border border-line bg-surface p-5 shadow-2xl shadow-brand-900/10">
+      <div className="rounded-3xl border border-line bg-surface p-5 shadow-2xl shadow-brand-900/10 sm:pb-14">
         <div className="flex items-center justify-between">
           <div>
             <p className="text-xs font-medium uppercase tracking-wider text-muted">telebirr · last 12 months</p>

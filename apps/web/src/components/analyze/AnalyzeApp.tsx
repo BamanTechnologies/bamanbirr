@@ -125,8 +125,8 @@ export function AnalyzeApp() {
           {FORMATS.map((f) => (
             <button key={f.id} onClick={() => setFormat(f.id)} aria-pressed={format === f.id}
               className={`relative rounded-2xl border p-4 text-left transition ${format === f.id ? "border-brand-400 bg-brand-50 ring-2 ring-brand-200 dark:bg-brand-950 dark:ring-brand-800" : "border-line bg-surface hover:border-brand-300"}`}>
-              {f.badge && <span className="absolute right-3 top-3 rounded-full bg-brand-600 px-2 py-0.5 text-[10px] font-semibold text-white">{f.badge}</span>}
-              <span className="block pr-14 font-semibold">{f.title}</span>
+              {f.badge && <span className="absolute right-3 top-3 rounded-full bg-brand-600 px-2 py-0.5 text-[11px] font-semibold text-white">{f.badge}</span>}
+              <span className={`block font-semibold ${f.badge ? "pr-24" : ""}`}>{f.title}</span>
               <span className="mt-1 block text-[13px] text-ink-2">{f.sub}</span>
             </button>
           ))}

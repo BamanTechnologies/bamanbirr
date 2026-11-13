@@ -16,7 +16,7 @@ export function AccountButton() {
     return () => document.removeEventListener("mousedown", close);
   }, []);
   if (!configured || user === undefined) return null;
-  if (!user) return <Link href="/signin" className="text-sm font-medium text-ink-2 hover:text-ink">Sign in</Link>;
+  if (!user) return <Link href="/signin" className="whitespace-nowrap py-2 text-sm font-medium text-ink-2 hover:text-ink">Sign in</Link>;
   const initial = (user.email ?? "?").charAt(0).toUpperCase();
   return (
     <div ref={ref} className="relative">
