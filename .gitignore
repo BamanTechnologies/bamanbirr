@@ -1,0 +1,17 @@
+node_modules/
+.next/
+dist/
+.expo/
+*.log
+.DS_Store
+*.tsbuildinfo
+.env*
+!.env.example
+# Personal message data: never commit
+fixtures/
+*.db
+*.db-wal
+*.db-shm
+*.jsonl
+# Personal message data (chat.db, exports, reference results): never commit
+/samples/
